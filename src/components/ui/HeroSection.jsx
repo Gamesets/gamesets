@@ -17,7 +17,7 @@ const HeroSection = () => {
               <span>Sell Rare Gaming</span> NFTs
               </h2>
               <p>
-               Discover, sell and buy rare Gaming NFTs on Gamesets! Join us and be a part of NEAR Blockchain's first nft gaminng marketplace.
+               Discover, sell and buy rare Gaming NFTs on Gamesets! Join us and be a part of NEAR Blockchain's first nft gaming marketplace.
               </p>
 
               <div className="hero__btns d-flex align-items-center gap-4">
