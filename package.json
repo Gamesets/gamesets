@@ -11,10 +11,14 @@
     "moralis-v1": "^1.11.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+<<<<<<< HEAD
     "react-moralis": "^1.4.2",
     "react-router-dom": "^6.2.1",
+=======
+    "react-router-dom": "^6.4.1",
+>>>>>>> 5d0fd13f6e1a2ec406299a53f7131b2bc29e90c6
     "react-scripts": "4.0.3",
-    "reactstrap": "^9.0.1",
+    "reactstrap": "^9.1.4",
     "remixicon": "^2.5.0",
     "web-vitals": "^1.1.2"
   },

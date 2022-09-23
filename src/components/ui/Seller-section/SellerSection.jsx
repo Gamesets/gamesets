@@ -23,7 +23,7 @@ const SellerSection = () => {
 
                 <div className="seller__content">
                   <h6>{item.sellerName}</h6>
-                  <h6>{item.currentBid} ETH</h6>
+                  <h6>{item.currentBid} NEAR</h6>
                 </div>
               </div>
             </Col>

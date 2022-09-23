@@ -73,12 +73,10 @@ const Footer = () => {
                 <span>
                   <i class="ri-fire-fill"></i>
                 </span>
-                NFTs
+                GAMESETS
               </h2>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate, quod repellat! Quis quos dolorum tenetur fuga?
-                Aspernatur rerum quae amet.
+                 Discover, sell and buy rare In-Game NFTs on Gamesets! Join us and be a part of NEAR Blockchain's first In-game NFT marketplace.
               </p>
             </div>
           </Col>
@@ -151,7 +149,7 @@ const Footer = () => {
           <Col lg="12" className=" mt-4 text-center">
             <p className="copyright">
               {" "}
-              Copyrights 2022, Developed by Muhibur Rahman. @Muhib's Tech Diary
+              Copyrights 2022, Developed by Gamesets
               All Rights Reserved.{" "}
             </p>
           </Col>

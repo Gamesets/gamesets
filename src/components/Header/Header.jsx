@@ -52,12 +52,13 @@ const Header = () => {
       <Container>
         <div className="navigation">
           <div className="logo">
-            <h2 className=" d-flex gap-2 align-items-center ">
-              <span>
+        <h2 className=" d-flex gap-2 align-items-center ">
+               <span>
                 <i class="ri-fire-fill"></i>
-              </span>
-              NFTs
+              </span> 
+              GAMESETS
             </h2>
+            
           </div>
 
           <div className="nav__menu" ref={menuRef} onClick={toggleMenu}>
