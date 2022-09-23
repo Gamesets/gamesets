@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./header.css";
 import { Container } from "reactstrap";
 
@@ -23,7 +23,10 @@ const NAV__LINKS = [
   },
 ];
 
+
+
 const Header = () => {
+  const [accountAddress, setAccountAddress] = useState("")
   const headerRef = useRef(null);
 
   const menuRef = useRef(null);
@@ -47,6 +50,20 @@ const Header = () => {
 
   const toggleMenu = () => menuRef.current.classList.toggle("active__menu");
 
+ 
+  const login = () => {
+    if(typeof window  !== "undefined") {
+       getAccount().then((response) => {
+        setAccountAddress(response);
+       } )
+    }
+  }
+
+  const  getAccount = async () => {
+    const accounts = await window.ethereum.request({method: "eth_requestAccounts"});
+    const account = accounts[0];
+    return account;
+  }
   return (
     <header className="header" ref={headerRef}>
       <Container>
@@ -82,7 +99,7 @@ const Header = () => {
               <span>
                 <i class="ri-wallet-line"></i>
               </span>
-              <Link to="/wallet">Connect Wallet</Link>
+              <Link onClick={login} to="/home">{!!accountAddress ? accountAddress: "ConnectButton"}</Link>
             </button>
 
             <span className="mobile__menu">
