@@ -76,7 +76,7 @@ const Footer = () => {
                 GAMESETS
               </h2>
               <p>
-                 Discover, sell and buy rare Gaming NFTs on Gamesets! Join us and be a part of NEAR Blockchain's first nft gaming marketplace.
+                 Discover, sell and buy rare In-Game NFTs on Gamesets! Join us and be a part of NEAR Blockchain's first In-game NFT marketplace.
               </p>
             </div>
           </Col>

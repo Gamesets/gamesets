@@ -13,11 +13,11 @@ const HeroSection = () => {
           <Col lg="6" md="6">
             <div className="hero__content">
               <h2>
-               Discover and Collect Gaming NFTs
-              <span>Sell Rare Gaming</span> NFTs
+               Discover and Collect In-Game NFTs
+              <span>Sell Rare In-Game</span> NFTs
               </h2>
               <p>
-               Discover, sell and buy rare Gaming NFTs on Gamesets! Join us and be a part of NEAR Blockchain's first nft gaming marketplace.
+               Discover, sell and buy rare In-Game NFTs on Gamesets! Join us and be a part of NEAR Blockchain's first In-Game NFT marketplace.
               </p>
 
               <div className="hero__btns d-flex align-items-center gap-4">

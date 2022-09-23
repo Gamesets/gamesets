@@ -42,7 +42,7 @@ const Wallet = () => {
               <div className="w-50 m-auto">
                 <h3 className="text-light">Connect your wallet</h3>
                 <p>
-                  Discover, sell and buy rare Gaming NFTs on Gamesets! Join us and be a part of NEAR Blockchain's first nft gaming marketplace.
+                  Discover, sell and buy rare In-game NFTs on Gamesets! Join us and be a part of NEAR Blockchain's first In-game NFT marketplace.
                 </p>
               </div>
             </Col>
