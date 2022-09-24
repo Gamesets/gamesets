@@ -56,10 +56,6 @@ const COMPANY = [
     display: "Ranking",
     url: "#",
   },
-  {
-    display: "Contact Us",
-    url: "/contact",
-  },
 ];
 
 const Footer = () => {
