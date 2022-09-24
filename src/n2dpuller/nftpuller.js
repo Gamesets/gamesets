@@ -36,7 +36,7 @@ const alchemy = new Alchemy(settings);
         window.location.reload();
     }
     
-    async function generateNft() {
+      const generateNft = async () => {
       const provider = new ethers.providers.JsonRpcProvider(mainnet)
       const wallet = new ethers.Wallet(key, provider);
       
@@ -48,15 +48,35 @@ const alchemy = new Alchemy(settings);
 
       const contract = new ethers.Contract(nftArray[i], NFTCollection, wallet);
       //FLOOR PRICE CALL HERE
-      const floorPrice = alchemy.nft.getFloorPrice(nftArray[i]).then(console.log)
+      
       // console.log("FLAG" ,floorPrice)
       
       // .then(console.log);
+
+      const floorPrice = await alchemy.nft.getFloorPrice(nftArray[i]); 
+
+      console.log("New logger", floorPrice);
 
       // items loop
       contract.totalSupply().then(result => {
         let totalSup = parseInt(result, 16)
   
+        var fp = 9;
+      // const floorPrice = async alchemy.nft.getFloorPrice(nftArray[i]).then( (a) => {
+      //                     console.log(a)
+      //                     fp = a.looksRare.floorPrice
+      //                     console.log("Maree log", fp)
+      //                   })
+
+      
+      
+      
+      // ( (a) => {
+      //   console.log(a)
+      //   fp = a.looksRare.floorPrice
+      //   console.log("Maree log", fp)
+      // })
+
         /*
         Replace "displayAmount" with "totalSup"
         below if you want to display all NFTs 
@@ -97,9 +117,9 @@ const alchemy = new Alchemy(settings);
                 wallet: ownerW,
                 desc,
                 tokenType: tokenType,
-                // floorPrice:  floorPrice
+                floorPrice:  floorPrice.looksRare.floorPrice
               }
-              console.log(meta)
+              console.log("meta" , meta)
               itemArray.push(meta)
             })
           })
@@ -140,7 +160,7 @@ if (loadingState === 'loaded' && !nfts.length)
                     <Text css={{color:'$white'}} h2>{nft.name}</Text>
                     <Text h3 css={{color:'$white'}}>NFT ID: {nft.tokenId}</Text>
                     <Text css={{color:'$white'}}>{nft.desc}</Text>
-                    {/* <Text h3 css={{color:'$white'}}> Price:{nft.floorPrice}</Text> */}
+                    <Text h3 css={{color:'$white'}}> Price:{nft.floorPrice}</Text>
 
                     
 
