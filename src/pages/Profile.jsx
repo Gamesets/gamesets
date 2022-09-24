@@ -2,10 +2,8 @@
 
 import { Container, Row, Col } from "reactstrap";
 import CommonSection from "../components/ui/Common-section/CommonSection";
-import NftCard from "../components/ui/Nft-card/NftCard";
+import ProfileCard from "../components/ui/Profile-card/ProfileCard";
 import img from "../assets/images/img-01.jpg";
-import avatar from "../assets/images/ava-01.png";
-
 import "../styles/profile.css";
 import { FetchNFTClient } from '@audius/fetch-nft'
 import React, { useEffect, useState } from 'react';
@@ -14,10 +12,6 @@ import React, { useEffect, useState } from 'react';
 
 const fetchClient = new FetchNFTClient()
 const Profile = () => {
-    
-     <>
-     <CommonSection title="Profile" />
-     </>
 
 
     // Fetching all collectibles for the given wallets
@@ -30,46 +24,52 @@ const Profile = () => {
       }).then(res => setCollectibles(res))
     }, [])
 
-
+    const item = {
+      imgUrl: img,
+      name: "Trista Francis",
+    };
      
   return (
 
  
 
-    <section>
-        <Container>
-        <Col lg="9" md="8" sm="6">
-              <div className="create__item">
-                <form>
-                <div className="form__input">
+    <div>
+      <CommonSection title="Profile" />
+      <section className="profile-card-img"><ProfileCard item={item} /></section>
+      <section className="userInfo">
+        <div className="form__input">
                     <label htmlFor="">Name</label>
-                    <input type="number" placeholder="NAME GOES HERE" />
+                    <input type="string"/>
                   </div>
                   <div className="form__input">
-                    <label htmlFor="">Upload profile pic</label>
-                    <input type="file" className="upload__input" />
+                    <label htmlFor="">username</label>
+                    <input></input>
                   </div>
-                </form>
+                  
+                  </section>
+    
+          <section>
+          <Container >
+          <Row>
+         
+          <div className="Header">
+           <h5>Your Collectables</h5> 
             </div>
-            </Col>
-          </Container>
-
-          <Container>
-    <div className="nfts">
-      <div className="Header">Eth Collectibles</div>
-      {
+          {
         collectibles?.ethCollectibles['0x5A8443f456f490dceeAD0922B0Cc89AFd598cec9']
           .map(collectible => (
-            <div className="Collectibles">
+         
+                 <Col lg="3" md="4" sm="6" key={item.id} className="mb-4">
               <div className="Name">{collectible.name}</div>
               <img className="Image" src={collectible.frameUrl || collectible.gifUrl} alt={collectible.name} />
-            </div>
+              </Col>
+         
           ))    
         }
-          </div>
-          </Container>
-
+        </Row>
+      </Container>
     </section>
+        </div>
 
   );
 }
