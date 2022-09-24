@@ -1,0 +1,33 @@
+@media only screen and (max-width: 992px) {
+  .nft__title {
+    font-size: 0.8rem !important;
+  }
+
+  .creator__info h6 {
+    font-size: 0.6rem !important;
+  
+  }
+
+  
+
+
+
+}
+.circular--square img{ 
+  border-radius: 50%; 
+  margin: auto;
+  width: 300px;  
+  /* padding: 10px; */
+  height: 250px;
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+
+  
+
+}
+
+
