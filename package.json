@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@nextui-org/react": "^1.0.0-beta.10",
-<<<<<<< HEAD
     "@audius/fetch-nft": "^0.1.7",
     "@dsalvagni/react-profile-picture": "^1.0.1",
     "@testing-library/jest-dom": "^5.15.0",
@@ -15,15 +14,6 @@
     "ethers": "^5.7.1",
     "install": "^0.13.0",
     "moralis-v1": "^1.11.0",
-=======
-    "@testing-library/jest-dom": "^5.15.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "alchemy-sdk": "^2.0.5-rc1",
-    "axios": "^0.27.2",
-    "bootstrap": "^5.1.3",
-    "ethers": "^5.7.1",
->>>>>>> 5e1c267c6316791f970ccd12f10c11b599c1c352
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.4.1",
