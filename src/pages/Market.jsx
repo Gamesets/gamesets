@@ -10,46 +10,49 @@ import { Container, Row, Col } from "reactstrap";
 
 import "../styles/market.css";
 
+import Nftpuller from '../n2dpuller/nftpuller'
+
 const Market = () => {
-  const [data, setData] = useState(NFT__DATA);
+  // const [data, setData] = useState(NFT__DATA);
 
-  const handleCategory = () => {};
+  // const handleCategory = () => {};
 
-  const handleItems = () => {};
+  // const handleItems = () => {};
 
-  // ====== SORTING DATA BY HIGH, MID, LOW RATE =========
-  const handleSort = (e) => {
-    const filterValue = e.target.value;
+  // // ====== SORTING DATA BY HIGH, MID, LOW RATE =========
+  // const handleSort = (e) => {
+  //   const filterValue = e.target.value;
 
-    if (filterValue === "high") {
-      const filterData = NFT__DATA.filter((item) => item.currentBid >= 6);
+  //   if (filterValue === "high") {
+  //     const filterData = NFT__DATA.filter((item) => item.currentBid >= 6);
 
-      setData(filterData);
-    }
+  //     setData(filterData);
+  //   }
 
-    if (filterValue === "mid") {
-      const filterData = NFT__DATA.filter(
-        (item) => item.currentBid >= 5.5 && item.currentBid < 6
-      );
+  //   if (filterValue === "mid") {
+  //     const filterData = NFT__DATA.filter(
+  //       (item) => item.currentBid >= 5.5 && item.currentBid < 6
+  //     );
 
-      setData(filterData);
-    }
+  //     setData(filterData);
+  //   }
 
-    if (filterValue === "low") {
-      const filterData = NFT__DATA.filter(
-        (item) => item.currentBid >= 4.89 && item.currentBid < 5.5
-      );
+  //   if (filterValue === "low") {
+  //     const filterData = NFT__DATA.filter(
+  //       (item) => item.currentBid >= 4.89 && item.currentBid < 5.5
+  //     );
 
-      setData(filterData);
-    }
-  };
+  //     setData(filterData);
+  //   }
+  // };
 
   return (
     <>
       <CommonSection title={"MarketPlace"} />
 
       <section>
-        <Container>
+      <Nftpuller/>
+        {/* <Container>
           <Row>
             <Col lg="12" className="mb-5">
               <div className="market__product__filter d-flex align-items-center justify-content-between">
@@ -91,7 +94,7 @@ const Market = () => {
               </Col>
             ))}
           </Row>
-        </Container>
+        </Container> */}
       </section>
     </>
   );

@@ -5,9 +5,33 @@ import axios from 'axios';
 import NFTCollection from './NFTCollection.json';
 import { Card, Container, Text, Grid, Button, Image } from '@nextui-org/react';
 import { nftContract, key, displayAmount, mainnet } from './settings';
+<<<<<<< HEAD
 
 
 export default function NftPuller() {
+=======
+import { Network, Alchemy } from "alchemy-sdk";
+
+
+
+
+export default function NftPuller() {
+
+
+  // Github: https://github.com/alchemyplatform/alchemy-sdk-js
+// Setup: npm install alchemy-sdk
+// Optional Config object, but defaults to demo api-key and eth-mainnet.
+const settings = {
+  apiKey: "bYm06cEEx4W_Evcq4Ed_cCHRfAFGbJO6", // Replace with your Alchemy API Key.
+  network: Network.ETH_MAINNET, // Replace with your network.
+};
+
+const alchemy = new Alchemy(settings);
+
+// Print the NFT floor price for a contract
+
+
+>>>>>>> 5e1c267c6316791f970ccd12f10c11b599c1c352
   const [nfts, setNfts] = useState([])
   const [loadingState, setLoadingState] = useState('not-loaded')
   useEffect(() => {
@@ -18,6 +42,7 @@ export default function NftPuller() {
         window.location.reload();
     }
     
+<<<<<<< HEAD
     async function generateNft() {
       const provider = new ethers.providers.JsonRpcProvider(mainnet)
       const wallet = new ethers.Wallet(key, provider);
@@ -29,11 +54,52 @@ export default function NftPuller() {
 
 
       const contract = new ethers.Contract(nftArray[i], NFTCollection, wallet);
+=======
+      const generateNft = async () => {
+      const provider = new ethers.providers.JsonRpcProvider(mainnet)
+      const wallet = new ethers.Wallet(key, provider);
+      
+    
+      const nftArray= [ '0xA03e357A09E761E8d486A1419c74bf42e8D1B064','0xd2a3c8f95daaed4ae824dd1f7441ff1f061124d6' ]
+      const itemArray = [];
+      for (let i = 0; i < nftArray.length; i++) 
+      {
+
+      const contract = new ethers.Contract(nftArray[i], NFTCollection, wallet);
+      //FLOOR PRICE CALL HERE
+      
+      // console.log("FLAG" ,floorPrice)
+      
+      // .then(console.log);
+
+      const floorPrice = await alchemy.nft.getFloorPrice(nftArray[i]); 
+
+      console.log("New logger", floorPrice);
+>>>>>>> 5e1c267c6316791f970ccd12f10c11b599c1c352
 
       // items loop
       contract.totalSupply().then(result => {
         let totalSup = parseInt(result, 16)
   
+<<<<<<< HEAD
+=======
+        var fp = 9;
+      // const floorPrice = async alchemy.nft.getFloorPrice(nftArray[i]).then( (a) => {
+      //                     console.log(a)
+      //                     fp = a.looksRare.floorPrice
+      //                     console.log("Maree log", fp)
+      //                   })
+
+      
+      
+      
+      // ( (a) => {
+      //   console.log(a)
+      //   fp = a.looksRare.floorPrice
+      //   console.log("Maree log", fp)
+      // })
+
+>>>>>>> 5e1c267c6316791f970ccd12f10c11b599c1c352
         /*
         Replace "displayAmount" with "totalSup"
         below if you want to display all NFTs 
@@ -42,10 +108,19 @@ export default function NftPuller() {
         */
         for (let i = 0; i < displayAmount; i++) {
 
+<<<<<<< HEAD
 
           var token = i + 1                         
           const owner = contract.ownerOf(token)
           const rawUri = contract.tokenURI(token)
+=======
+          var token = i + 1                         
+          const owner = contract.ownerOf(token)
+          const rawUri = contract.tokenURI(token)
+        
+  
+
+>>>>>>> 5e1c267c6316791f970ccd12f10c11b599c1c352
           const Uri = Promise.resolve(rawUri)
           const getUri = Uri.then(value => {
             let str = value
@@ -55,10 +130,19 @@ export default function NftPuller() {
             });
             return metadata;
           })
+<<<<<<< HEAD
+=======
+
+    
+>>>>>>> 5e1c267c6316791f970ccd12f10c11b599c1c352
           getUri.then(value => {
             let rawImg = value.data.image
             var name = value.data.name
             var desc = value.data.description
+<<<<<<< HEAD
+=======
+            var tokenType = value.data.tokenType     
+>>>>>>> 5e1c267c6316791f970ccd12f10c11b599c1c352
             let image = rawImg.replace('ipfs://', 'https://ipfs.io/ipfs/')
             Promise.resolve(owner).then(value => {
               let ownerW = value;
@@ -68,8 +152,15 @@ export default function NftPuller() {
                 tokenId: token,
                 wallet: ownerW,
                 desc,
+<<<<<<< HEAD
               }
               console.log(meta)
+=======
+                tokenType: tokenType,
+                floorPrice:  floorPrice.looksRare.floorPrice
+              }
+              console.log("meta" , meta)
+>>>>>>> 5e1c267c6316791f970ccd12f10c11b599c1c352
               itemArray.push(meta)
             })
           })
@@ -110,6 +201,13 @@ if (loadingState === 'loaded' && !nfts.length)
                     <Text css={{color:'$white'}} h2>{nft.name}</Text>
                     <Text h3 css={{color:'$white'}}>NFT ID: {nft.tokenId}</Text>
                     <Text css={{color:'$white'}}>{nft.desc}</Text>
+<<<<<<< HEAD
+=======
+                    <Text h3 css={{color:'$white'}}> Price:{nft.floorPrice}</Text>
+
+                    
+
+>>>>>>> 5e1c267c6316791f970ccd12f10c11b599c1c352
                     </Card.Body>
                   </Card>
                 </a>
