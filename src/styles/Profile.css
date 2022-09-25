@@ -1,0 +1,36 @@
+.user{
+    /* padding-top: 400px; */
+   
+  margin: auto;
+  width: 300px;  
+  /* padding: 10px; */
+  height: 250px;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: 100px;
+  transform: translate(-50%, -50%);
+  padding-bottom: 100px;
+    
+}
+
+.user_name{
+    margin: auto;
+    width: 300px;  
+    /* padding: 10px; */
+    height: 250px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 49%;
+    margin-left: 100px;
+    transform: translate(-50%, -50%);
+    padding-bottom: 100px;
+
+
+}
+
+.avatar{
+    border-radius: 50%;
+}
