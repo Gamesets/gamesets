@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "./nft-card.css";
 
 import Modal from "../Modal/Modal";
+// import 'rsuite/dist/styles/rsuite-default.css';
+import { Dropdown } from 'rsuite';
 
 
 
@@ -55,6 +57,15 @@ const NftCard = (props) => {
             </div>
           </div>
         </div>
+
+        <div className="dropdown_menu" >
+      <Dropdown className= "dropdown" title="Select Currency">
+        <Dropdown.Item>USDC $</Dropdown.Item>
+        <Dropdown.Item>ETH  ⟠ </Dropdown.Item>
+        <Dropdown.Item>SOL ◎</Dropdown.Item>
+        <Dropdown.Item>DAI ◈ </Dropdown.Item>
+      </Dropdown>
+    </div>
 
         <div className=" mt-3 d-flex align-items-center justify-content-between">
           <button
