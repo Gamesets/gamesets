@@ -5,6 +5,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "../pages/Home";
 import Market from "../pages/Market";
 import Create from "../pages/Create";
+import Profile from "../pages/Profile";
 import Contact from "../pages/Contact";
 
 import Wallet from "../pages/Wallet";
@@ -17,7 +18,8 @@ const Routers = () => {
       <Route path="/home" element={<Home />} />
       <Route path="/market" element={<Market />} />
       <Route path="/create" element={<Create />} />
-      <Route path="/contact" element={<Contact />} />
+      {/* <Route path="/contact" element={<Contact />} /> */}
+      <Route path="/profile" element={<Profile />} />
       <Route path="/wallet" element={<Wallet />} />
       <Route path="/market/:id" element={<NftDetails />} />
     </Routes>
